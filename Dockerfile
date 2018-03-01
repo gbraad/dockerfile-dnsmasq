@@ -1,9 +1,6 @@
 FROM centos:7
 MAINTAINER Gerard Braad <me@gbraad.nl>
 
-RUN yum -y upgrade && \
-    yum clean all
-
 RUN yum -y install dnsmasq && \
     yum clean all
 
