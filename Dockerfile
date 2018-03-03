@@ -2,7 +2,8 @@ FROM centos:7
 MAINTAINER Gerard Braad <me@gbraad.nl>
 
 RUN yum -y install dnsmasq && \
-    yum clean all
+    yum clean all && \
+    systemctl enable dnsmasq
 
 COPY dnsmasq.conf /etc/
 COPY resolv.dnsmasq.conf /etc/
@@ -11,4 +12,4 @@ VOLUME /dnsmasq.hosts
 
 EXPOSE 2053
 
-ENTRYPOINT ["/usr/sbin/dnsmasq", "-d"]
+CMD [ "/sbin/init" ]
