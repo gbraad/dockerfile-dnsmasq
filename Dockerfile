@@ -8,8 +8,8 @@ RUN yum -y install dnsmasq && \
 COPY dnsmasq.conf /etc/
 COPY resolv.dnsmasq.conf /etc/
 
-VOLUME /dnsmasq.hosts
+VOLUME /etc/dnsmasq.hosts
 
-EXPOSE 2053
+EXPOSE 53
 
 CMD [ "/sbin/init" ]
