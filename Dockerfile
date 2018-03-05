@@ -10,6 +10,6 @@ COPY resolv.dnsmasq.conf /etc/
 
 VOLUME /etc/dnsmasq.hosts
 
-EXPOSE 53
+EXPOSE 53/udp
 
 CMD [ "/sbin/init" ]
